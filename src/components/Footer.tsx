@@ -61,12 +61,12 @@ const Footer = () => {
             className="lg:w-1/3 mb-10 lg:mb-0 lg:pr-16"
           >
             <div className="flex items-center mb-8">
-              <div className="mr-3 relative w-14 h-14 flex items-center justify-center p-2 rounded-md">
+              <div className="mr-3 relative w-14 h-14 flex items-center justify-center p-2 rounded-md bg-white">
                 <Image
-                  src="/images/logo-dark.svg"
+                  src="/images/logo.svg"
                   alt="KVMP Logo"
-                  width={44}
-                  height={44}
+                  width={60}
+                  height={60}
                   className="object-contain"
                 />
               </div>

@@ -1,10 +1,17 @@
-// src/app/api/email/send/route.ts
 import { NextRequest, NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
 
 export async function POST(req: NextRequest) {
   try {
-    const { user_email, message } = await req.json();
+    const { name, email, message } = await req.json();
+    
+    // Validate required fields
+    if (!name || !email || !message) {
+      return NextResponse.json(
+        { error: 'Missing required fields' },
+        { status: 400 }
+      );
+    }
 
     // Create transporter
     const transporter = nodemailer.createTransport({
@@ -16,34 +23,29 @@ export async function POST(req: NextRequest) {
         pass: process.env.EMAIL_PASS
       }
     });
-
-      // Send email
-      // TODO: update receiver and sender email address from the environment variable file which looks like this:
     
-// EMAIL_HOST="smtp.gmail.com"
-// EMAIL_PORT="587"
-// EMAIL_SECURE="false"
-// EMAIL_USER="email@gmail.com"
-// EMAIL_PASS="pass"
-// EMAIL_FROM="KVMP <noreply@KVMP.com>"
-      
-
+    // Send email to yourself
     await transporter.sendMail({
-      from: process.env.EMAIL_FROM || 'KVMP Website',
-      to: process.env.EMAIL_FROM,
-      subject: 'Reaching out',
-        html: `
-      This is email by: ${user_email}
-        <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
-          <p> ${message} </p>
+      from: `${process.env.EMAIL_FROM} <${process.env.EMAIL_USER}>`,
+      to: process.env.EMAIL_USER, // Send to yourself
+      replyTo: email, // Set reply-to as the user's email
+      subject: `New Contact Form Submission from ${name}`,
+      html: `
+        <h2>New Message from Contact Form</h2>
+        <p><strong>Name:</strong> ${name}</p>
+        <p><strong>Email:</strong> ${email}</p>
+        <p><strong>Message:</strong></p>
+        <div style="padding: 12px; border-left: 4px solid #0066cc; background-color: #f0f8ff;">
+          ${message.replace(/\n/g, '<br>')}
         </div>
-      `});
+      `
+    });
 
     return NextResponse.json({ success: true });
   } catch (error) {
     console.error('Error sending email:', error);
     return NextResponse.json(
-      { error: 'Failed to send email' }, 
+      { error: 'Failed to send email' },
       { status: 500 }
     );
   }

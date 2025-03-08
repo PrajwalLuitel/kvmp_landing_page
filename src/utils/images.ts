@@ -2,8 +2,8 @@
 import { StaticImageData } from 'next/image';
 
 // Logo and hero section
-import logoLight from '../../public/images/logo-light.svg';
-import logoDark from '../../public/images/logo-dark.svg';
+import logoLight from '../../public/images/logo.svg';
+import logoDark from '../../public/images/logo.svg';
 import heroBg from '../../public/images/hero-bg.jpg';
 
 // Export grouped images

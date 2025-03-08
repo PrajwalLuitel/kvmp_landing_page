@@ -19,11 +19,11 @@ const FloatingCard: React.FC<FloatingCardProps> = ({
   const getPosition = () => {
     // Positions are arranged in a circular pattern
     const positions = [
-      { top: '-120px', left: '50%', transform: 'translateX(-50%)' },
+      { top: '-40px', left: '-10%', transform: 'translateX(-50%)' },
       { top: '-60px', right: '-110px' },
-      { bottom: '-60px', right: '-110px' },
-      { bottom: '-120px', left: '50%', transform: 'translateX(-50%)' },
-      { bottom: '-60px', left: '-110px' }
+      { bottom: '170px', right: '-230px' },
+      { bottom: '-20px', left: '80%', transform: 'translateX(-50%)' },
+      { bottom: '45px', left: '-170px' }
     ];
     
     return positions[index % positions.length];
@@ -61,7 +61,7 @@ const FloatingCard: React.FC<FloatingCardProps> = ({
       whileHover={{ scale: 1.05, y: -5 }}
     >
       <div className="flex items-center bg-white rounded-xl shadow-glow p-3 backdrop-blur-lg bg-opacity-90">
-        <div className={`${colorClass} rounded-full p-2 mr-3`}>
+        <div className={`${colorClass} rounded-full p-2 mr-4 `}>
           <IconComponent name={iconName} size={20} className="text-white" />
         </div>
         <span className="font-semibold text-gray-800 whitespace-nowrap">{title}</span>

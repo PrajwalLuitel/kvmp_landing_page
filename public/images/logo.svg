@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 300">
+  <!-- K -->
+  <path d="M100 80 L100 190 M100 135 L130 80 M100 135 L130 190" 
+        stroke="#083D77" stroke-width="14" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+  
+  <!-- V -->
+  <path d="M150 80 L175 190 L200 80" 
+        stroke="#083D77" stroke-width="14" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+  
+  <!-- M -->
+  <path d="M220 190 L220 80 L245 135 L270 80 L270 190" 
+        stroke="#083D77" stroke-width="14" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+  
+  <!-- P -->
+  <path d="M290 190 L290 80" 
+        stroke="#083D77" stroke-width="14" stroke-linecap="round" fill="none" />
+  <path d="M290 80 Q330 80, 330 110 Q330 140, 290 140" 
+        stroke="#083D77" stroke-width="14" stroke-linecap="round" fill="none" />
+  
+  <!-- Hidden Path Element (showing a continuous journey/process) -->
+  <path d="M340 120 Q370 80, 400 120" 
+        stroke="#F0C808" stroke-width="4" stroke-linecap="round" fill="none" />
+  
+  <!-- Subtle Grid Line (represents structured project management) -->
+  <line x1="100" y1="210" x2="400" y2="210" stroke="#EBEBEB" stroke-width="2" />
+  
+  <!-- Company Descriptor -->
+  <text x="250" y="230" font-family="'Inter', sans-serif" font-size="18" font-weight="400" fill="#083D77" text-anchor="middle">INFO SYSTEMS INC</text>
+  
+  <!-- Hidden Meaning: Data points that also form bank vault/secure dots -->
+  <g transform="translate(250, 250)">
+    <circle cx="-90" cy="0" r="3" fill="#F0C808" />
+    <circle cx="-45" cy="0" r="3" fill="#F0C808" />
+    <circle cx="0" cy="0" r="5" fill="#F0C808" />
+    <circle cx="45" cy="0" r="3" fill="#F0C808" />
+    <circle cx="90" cy="0" r="3" fill="#F0C808" />
+  </g>
+</svg>

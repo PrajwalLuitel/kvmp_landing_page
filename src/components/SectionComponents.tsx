@@ -19,7 +19,7 @@ export const SectionHeader: React.FC<SectionHeaderProps> = ({
 }) => {
   return (
     <motion.div 
-      className={`mb-12 ${centered ? 'text-center' : ''}`}
+      className={`mb-12 w-[40%] ${centered ? 'text-left' : ''}`}
       initial="hidden"
       whileInView="show"
       viewport={{ once: true, amount: 0.3 }}
@@ -85,7 +85,7 @@ export const FeatureItem: React.FC<FeatureItemProps> = ({ title, description, in
       className="mb-10"
     >
       <div className="flex items-start">
-        <div className="flex-shrink-0 bg-blue-600 rounded-full p-2 mr-5 mt-1">
+        <div className="flex-shrink-0 bg-[#0e296b] rounded-full p-2 mr-5 mt-1">
           <Check className="h-5 w-5 text-white" />
         </div>
         <div>
@@ -106,7 +106,7 @@ interface CTAButtonProps {
 export const CTAButton: React.FC<CTAButtonProps> = ({ text, onClick }) => {
   return (
     <motion.button
-      className="gradient-button"
+      className="bg-[#0e296b] text-white p-4 rounded-xl shadow-md hover:bg-[#18337e] hover:drop-shadow-2xl"
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.95 }}
       onClick={onClick}
